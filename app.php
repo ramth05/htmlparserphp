@@ -1,6 +1,5 @@
 <?php
 error_reporting(0);
-include "simple_html_dom.php";
 
 // Create a stream
 $opts = array(
@@ -27,12 +26,19 @@ $dom->preserveWhiteSpace = false;
 
 /*** the table by its tag name ***/ 
 $aElements = $dom->getElementsByTagName('a');
-//echo count($tables);
-echo "<pre>";
-//print_r($tables->item(2));
+
+//echo "<pre>";
+
 foreach($aElements as $t){
 	if($t->textContent == "Submit Paper"){
-		print_r($t);
+		//print_r($t);
+		//fetch the URL of "href" attribute
+		foreach($t->attributes as $a){
+			if($a->name ==="href"){
+				echo $a->value;
+				break;
+			}
+		} 
 		break;
 	}	
 } 
