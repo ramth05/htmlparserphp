@@ -10,6 +10,7 @@ $opts = array(
   )
 );
 
+//reuired because site using cookies
 $context = stream_context_create($opts);
 
 // Open the file using the HTTP headers set above
