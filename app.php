@@ -1,6 +1,8 @@
 <?php
 error_reporting(0);
 
+const VERSION = "1.4";
+
 // Create a stream
 $opts = array(
   'http'=>array(
