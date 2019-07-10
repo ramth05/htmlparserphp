@@ -1,7 +1,7 @@
 <?php
 error_reporting(0);
 
-const VERSION = "1.9.3"
+const VERSION = "1.9.4"
 
 // Create a stream
 $opts = array(
