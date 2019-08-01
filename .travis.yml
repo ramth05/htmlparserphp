@@ -1,5 +1,8 @@
 dist: xenial
 language: php
+php:
+- 5.6
+- 7.2
 
 script:
   # Run a syntax validation check on all PHP files
