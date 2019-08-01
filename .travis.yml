@@ -2,23 +2,16 @@ dist: trusty
 language: php
 php:
 - 7.2
-
 script:
-  # Run a syntax validation check on all PHP files
-  -  find . -path  -prune -o -iname '*.php' |xargs -n1 php -l
-  
+- find . -path  -prune -o -iname '*.php' |xargs -n1 php -l
 before_deploy:
-  - cat release.txt |zip -r@ "htmlparse-php.zip"  
-  
+- cat release.txt |zip -r@ "htmlparse-php.zip"
 deploy:
   provider: releases
-  # Otherwise, we lose the vendor/ directory
   skip_cleanup: true
-  api_key: dd543ac704465e95bba5788e732098ef18a3de64
-  # travis doesn't support multi file deployes yet, not that we need them
   file: htmlparse-php.zip
   on:
-    # GitHub refuses to accept releases that are not tagged
     tags: true
     php: 7.2
-
+  api-key:
+    secure: tX5X80PJiIkjBBLNIm4UTo2Hav65vtvoJ0ffcOClGiZO+nmnLDToZjV3PNQkPrGUY/XhPE7HewIE0d5Ha0IH4zQtu8o/aVRWiWlgw3NggMNyGdPi9Cm3sC2k49FQ8sI70qm2B+26xiFTV1CwEV8MYY1amdOgtIFrY96doNNFhN85iAcumhzzqggfoyCXs6iKFposKX56H2pBwcAB1h/bqLtdJh3jz4oGrvoes8ZEZtTmGR6DN/PlCsc/X83b1W3DewI3iYAhOTLu7kCV+9wlmdnSPNKgW5ZBd0/UR5WSXZbwTbrpsuPdyVMHjJl0kqbC+Z3p7uyezWVpKAf8pQJDhp6JKIOhBX2WXwwE/sFGHX9wEXprBaHxuqi26RW4oxGiAgO4NL+5Lx+KgtcU91M+ZsLL5bGlL88OHwiXbgt3bECkEy2Vw2mHXUIcNPEgEeljsYUUS9mvc2QA1K7EbFTjwzU59ITSbVvxSaMSG9Ra4i3HLFvVXCnEvq1eYNGNICWXfLwi9LNOykzz1l/Qgd6siRiW3EIq6TPO0TkMTHBY/nzZOwkBNTjUTmGPwpNqtMDKp0kSh61/RT2LkOekGAcVfmZsLVmKbID5kGSosPntRf9hoiGt8/T1kXYUBWAYeihpRzVT9XNR+427nldVRXVfQ4VHvAmetgW2aeVNL2Zx1rM=
