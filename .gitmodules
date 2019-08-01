@@ -1,0 +1,3 @@
+[submodule "razorpay-php"]
+	path = razorpay-php
+	url = https://github.com/razorpay/razorpay-php
