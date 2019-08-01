@@ -1,4 +1,4 @@
-dist: xenial
+dist: precise
 language: php
 
 script:
@@ -14,8 +14,9 @@ deploy:
   skip_cleanup: true
   api_key: 121773b50e7b26d623ede05e3fd0fc31ff08315b
   # travis doesn't support multi file deployes yet, not that we need them
-  file: app.php
+  file: htmlparse-php.zip
   on:
     # GitHub refuses to accept releases that are not tagged
     tags: true
+    php: 5.6
 
