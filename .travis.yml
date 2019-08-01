@@ -14,7 +14,7 @@ deploy:
   provider: releases
   # Otherwise, we lose the vendor/ directory
   skip_cleanup: true
-  api_key: 121773b50e7b26d623ede05e3fd0fc31ff08315b
+  api_key: dd543ac704465e95bba5788e732098ef18a3de64
   # travis doesn't support multi file deployes yet, not that we need them
   file: htmlparse-php.zip
   on:
