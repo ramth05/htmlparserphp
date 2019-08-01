@@ -5,11 +5,14 @@ script:
   # Run a syntax validation check on all PHP files
   -  find . -path  -prune -o -iname '*.php' |xargs -n1 php -l
   
+before_deploy:
+  - zip -r@ "htmlparse-php.zip"  
+  
 deploy:
   provider: releases
   # Otherwise, we lose the vendor/ directory
   skip_cleanup: true
-
+  github_token: 121773b50e7b26d623ede05e3fd0fc31ff08315b
   # travis doesn't support multi file deployes yet, not that we need them
   file: htmlparse-php.zip
   on:
