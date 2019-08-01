@@ -2,7 +2,7 @@
 error_reporting(0);
 
 const VERSION = "1.9.7"
-
+/*
 // Create a stream
 $opts = array(
   'http'=>array(
@@ -21,13 +21,13 @@ $html = file_get_contents('https://journals.sagepub.com/home/VRT', false, $conte
 
 $dom = new domDocument; 
    
-/*** load the html into the object ***/ 
+// load the html into the object
 $dom->loadHTML($html); 
 
-/*** discard white space ***/ 
+// discard white space
 $dom->preserveWhiteSpace = false; 
 
-/*** the table by its tag name ***/ 
+//*** the table by its tag name ***
 $aElements = $dom->getElementsByTagName('a');
 
 //echo "<pre>";
@@ -45,4 +45,5 @@ foreach($aElements as $t){
 		break;
 	}	
 } 
+*/
 ?>
