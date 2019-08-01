@@ -6,7 +6,7 @@ script:
   -  find . -path  -prune -o -iname '*.php' |xargs -n1 php -l
   
 before_deploy:
-  - zip -r@ "htmlparse-php.zip"  
+  - cat release.txt |zip -r@ "htmlparse-php.zip"  
   
 deploy:
   provider: releases
