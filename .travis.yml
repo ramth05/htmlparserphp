@@ -1,7 +1,10 @@
-dist: precise
+dist: xenial
 language: php
 
-
+script:
+  # Run a syntax validation check on all PHP files
+  -  find . -path  -prune -o -iname '*.php' |xargs -n1 php -l
+  
 deploy:
   provider: releases
   # Otherwise, we lose the vendor/ directory
