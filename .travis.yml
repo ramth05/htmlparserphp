@@ -4,7 +4,8 @@ php:
 - 7.2
 
 before_script:
-  - wget https://github.com/razorpay/razorpay-php/releases/download/2.5.0/razorpay-php.zip -O razorpay.zip && unzip razorpay.zip && rm razorpay.zip
+  - mkdir -p razorpay
+  - cd razorpay && wget https://github.com/razorpay/razorpay-php/releases/download/2.5.0/razorpay-php.zip -O razorpay.zip && unzip razorpay.zip && rm razorpay.zip && cd ..
 
 script:
 - find . -path  -prune -o -iname '*.php' |xargs -n1 php -l
